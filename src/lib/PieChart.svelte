@@ -11,7 +11,7 @@
 		document.body.style.marginLeft = '32.5%';
 		document.body.style.marginTop = '5%';
 
-		document.addEventListener('mouseenter', () => {
+		document.addEventListener('pointerenter', () => {
 			let canvas = d3.select('body').append('svg').attr('width', width).attr('height', height);
 
 			let group = canvas.append('g').attr('transform', 'translate(300, 300)');
@@ -58,9 +58,20 @@
 				.text((d) => d.data);
 		});
 
-		document.addEventListener('mouseleave', () => {
+		document.addEventListener('pointerleave', () => {
 			d3.selectAll('svg').remove();
 		});
+
+		const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+		if (isTouchDevice) {
+    			element.addEventListener('touchstart', handleMouseEnterOrTouchStart);
+    			element.addEventListener('touchend', handleMouseLeaveOrTouchEnd);
+		} else {
+    			element.addEventListener('mouseenter', handleMouseEnterOrTouchStart);
+    			element.addEventListener('mouseleave', handleMouseLeaveOrTouchEnd);
+		}
+
 	});
 </script>
 
