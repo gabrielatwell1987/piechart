@@ -26,7 +26,6 @@
 		document.addEventListener('touchend', () => {
 			d3.selectAll('svg').remove();
 		});
-	});
 
 		const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
@@ -37,6 +36,8 @@
     			element.addEventListener('mouseenter', handleMouseEnterOrTouchStart);
     			element.addEventListener('mouseleave', handleMouseLeaveOrTouchEnd);
 		}
+	});
+
 
 	function pie() {
 		let canvas = d3.select('body').append('svg').attr('width', width).attr('height', height);
