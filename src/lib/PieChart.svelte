@@ -11,8 +11,35 @@
 		document.body.style.marginLeft = '32.5%';
 		document.body.style.marginTop = '5%';
 
-		document.addEventListener('pointerenter', () => {
-			let canvas = d3.select('body').append('svg').attr('width', width).attr('height', height);
+		document.addEventListener('mouseenter', () => {
+			pie();
+		});
+
+		document.addEventListener('touchstart', () => {
+			pie();
+		});
+
+		document.addEventListener('mouseleave', () => {
+			d3.selectAll('svg').remove();
+		});
+
+		document.addEventListener('touchend', () => {
+			d3.selectAll('svg').remove();
+		});
+	});
+
+		const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+		if (isTouchDevice) {
+    			element.addEventListener('touchstart', handleMouseEnterOrTouchStart);
+    			element.addEventListener('touchend', handleMouseLeaveOrTouchEnd);
+		} else {
+    			element.addEventListener('mouseenter', handleMouseEnterOrTouchStart);
+    			element.addEventListener('mouseleave', handleMouseLeaveOrTouchEnd);
+		}
+
+	function pie() {
+		let canvas = d3.select('body').append('svg').attr('width', width).attr('height', height);
 
 			let group = canvas.append('g').attr('transform', 'translate(300, 300)');
 
@@ -56,23 +83,7 @@
 					};
 				})
 				.text((d) => d.data);
-		});
-
-		document.addEventListener('pointerleave', () => {
-			d3.selectAll('svg').remove();
-		});
-
-		const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-
-		if (isTouchDevice) {
-    			element.addEventListener('touchstart', handleMouseEnterOrTouchStart);
-    			element.addEventListener('touchend', handleMouseLeaveOrTouchEnd);
-		} else {
-    			element.addEventListener('mouseenter', handleMouseEnterOrTouchStart);
-    			element.addEventListener('mouseleave', handleMouseLeaveOrTouchEnd);
-		}
-
-	});
+	};
 </script>
 
 <h1>Hover your mouse over</h1>
