@@ -23,7 +23,12 @@
 	$: console.log(hoveredData);
 </script>
 
+<svelte:head>
+	<title>Scatterplot Chart</title>
+</svelte:head>
+
 <h1>Random people who study..</h1>
+
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
 	class="chart-container"
