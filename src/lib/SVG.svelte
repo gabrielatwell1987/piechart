@@ -37,10 +37,10 @@
 		// 	.attr('ry', 50)
 		// 	.attr('fill', 'yellow');
 
-		let polygon = canvas
-			.append('polygon')
-			.attr('points', '0,30 50,0 100,30 75,75 25,75')
-			.attr('fill', 'purple');
+		// let polygon = canvas
+		// 	.append('polygon')
+		// 	.attr('points', '0,30 50,0 100,30 75,75 25,75')
+		// 	.attr('fill', 'purple');
 
 		// let polyline = canvas
 		// 	.append('polyline')
@@ -49,19 +49,19 @@
 		// 	.attr('stroke', '#ccc')
 		// 	.attr('stroke-width', 15);
 
-		let path = canvas
-			.append('path')
-			.attr('d', 'M 100 100 L 300 100 L 200 300 z')
-			.attr('fill', 'none')
-			.attr('stroke', '#1778AE')
-			.attr('stroke-width', 5);
+		// let path = canvas
+		// 	.append('path')
+		// 	.attr('d', 'M 100 100 L 300 100 L 200 300 z')
+		// 	.attr('fill', 'none')
+		// 	.attr('stroke', '#1778AE')
+		// 	.attr('stroke-width', 5);
 
 		let text = canvas
 			.append('text')
-			.text('Chelloskis!')
+			.text('Hover over me!')
 			.attr('x', 1)
-			.attr('y', 400)
-			.attr('font-family', 'san-serif')
+			.attr('y', 25)
+			.attr('font-family', 'serif')
 			.attr('letter-spacing', 25)
 			.attr('font-size', 50)
 			.attr('font-weight', '900')

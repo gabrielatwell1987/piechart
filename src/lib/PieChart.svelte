@@ -1,6 +1,7 @@
 <script>
 	import * as d3 from 'd3';
 	import { onMount } from 'svelte';
+	import gsap from 'gsap';
 
 	let width = 15000;
 	let height = 15000;
@@ -61,6 +62,21 @@
 		document.addEventListener('mouseleave', () => {
 			d3.selectAll('svg').remove();
 		});
+
+		window.addEventListener('resize', function () {
+			var width = window.innerWidth;
+			var height = window.innerHeight;
+
+			console.log('Width: ' + width + ', Height: ' + height);
+
+			if (width < 600) {
+				gsap.set('canvas', { scale: 0.25 });
+			} else if (width < 900) {
+				gsap.set('canvas', { scale: 0.75 });
+			} else {
+				gsap.set('canvas', { scale: 1 });
+			}
+		});
 	});
 </script>
 
@@ -68,6 +84,7 @@
 
 <style>
 	h1 {
+		font-family: var(--condensed);
 		font-size: 2.5rem;
 		margin-top: 5%;
 		margin-bottom: 3rem;
