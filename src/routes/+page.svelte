@@ -12,7 +12,9 @@
 	// import BarGraph from '$lib/BarGraph.svelte';
 	// import Paths from '$lib/Paths.svelte';
 	// import Arcs from '$lib/Arcs.svelte';
-	import PieChart from '$lib/PieChart.svelte';
+
+	// import PieChart from '$lib/PieChart.svelte';
+	import Svelte from '$lib/Svelte.svelte';
 </script>
 
 <!-- <Append /> -->
@@ -28,4 +30,6 @@
 <!-- <BarGraph /> -->
 <!-- <Paths /> -->
 <!-- <Arcs /> -->
-<PieChart />
+
+<!-- <PieChart /> -->
+<Svelte />
