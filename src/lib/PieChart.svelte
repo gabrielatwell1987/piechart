@@ -113,15 +113,3 @@
 </script>
 
 <h1>Hover your mouse over</h1>
-
-<style>
-	h1 {
-		font-family: var(--condensed);
-		font-size: 2.5rem;
-		margin-top: 5%;
-		margin-bottom: 3rem;
-		margin-right: 67.5%;
-		text-align: center;
-		letter-spacing: 5px;
-	}
-</style>
