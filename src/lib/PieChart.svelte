@@ -124,16 +124,4 @@
 		text-align: center;
 		letter-spacing: 5px;
 	}
-
-	@media (min-width: 200px) {
-		body {
-			transform: scale(0.3);
-		}
-	}
-
-	@media (min-width: 700px) {
-		body {
-			transform: scale(1);
-		}
-	}
 </style>
